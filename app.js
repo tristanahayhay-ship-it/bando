@@ -36,15 +36,17 @@
     navigationHelpButton: true,
     fullscreenButton: false,
     infoBox: true,
-    terrainProvider: new Cesium.EllipsoidTerrainProvider(),
-    imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-      url: "https://tile.openstreetmap.org/",
-      credit:
-        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-    }),
   });
 
   viewer.scene.globe.enableLighting = true;
+  viewer.imageryLayers.removeAll();
+  viewer.imageryLayers.addImageryProvider(
+    new Cesium.UrlTemplateImageryProvider({
+      url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      credit:
+        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+    }),
+  );
 
   const entitiesById = new Map();
 

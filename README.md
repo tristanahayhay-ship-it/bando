@@ -25,4 +25,5 @@ Repo đã có workflow: `.github/workflows/pages.yml`.
 - Engine 3D: [CesiumJS](https://cesium.com/platform/cesiumjs/)
 - Imagery tiles: [OpenStreetMap](https://www.openstreetmap.org/copyright)
 - App này không dùng Google Maps assets.
+- OSM public tile server có chính sách/giới hạn sử dụng; khi production tải lớn nên dùng nhà cung cấp tile riêng hoặc self-host tile.
 - Cấu hình hiện tại không yêu cầu API key. Nếu sau này dùng Cesium ion/tiles có key riêng, cần quản lý key qua GitHub Secrets, không hard-code vào mã nguồn.
